@@ -146,7 +146,7 @@
             const experiments = {
                 "syre-base-titrering": {
                     tittel: "Syre-base-titrering",
-                    foto: "bilder/titrering.jpg",
+                    foto: "titrering.png",
                     skildring: "Dette forsøket viser hvordan syrer og baser nøytraliserer hverandre. Du skal bruke en titrering for å finne pH-verdien til en ukjent syre.",
                     utstyr: ["Begerglass", "Byrette", "Pipette", "pH-indikator", "Ukjent syre", "Sterk base"],
                     maal: ["Lære om nøytralisering", "Forstå pH-skalaen", "Utføre en titrering korrekt"],
@@ -180,7 +180,7 @@
                 
                 "dansande-rosiner": {
                     tittel: "Dansende rosiner",
-                    foto: "bilder/rosinteater.jpg",
+                    foto: "rosinteater.jpg",
                     skildring: "Dette forsøket viser korleis gassbobler påverkar oppdrift. Rosiner bevegjer seg opp og ned i brus fordi bobler festar seg til overflata.",
                     utstyr: ["Begerglass", "Brus med kullsyre", "Rosiner"],
                     maal: ["Observere korleis gassbobler påverkar oppdrift", "Forstå samanhengen mellom tettleik og volum", "Drøfte Arkimedes' prinsipp i praksis"],
@@ -212,10 +212,9 @@
                     ]
                 },
 
-                // === NYE FORSØK START ===
                 "papirkromatografi": {
                     tittel: "Fargeseparasjon (Kromatografi)",
-                    foto: "bilder/kromatografi.png", // NY: PLASSHALDARBILETE
+                    foto: "kromatografi.png",
                     skildring: "Forstå korleis kromatografi kan brukast til å skille ulike fargestoff i t.d. ein tusj.",
                     utstyr: ["Glass", "Vatn", "Filterpapir (f.eks. kaffefilter)", "Svart tusj (vassløyseleg)", "Saks"],
                     maal: ["Lære om kromatografi", "Sjå at fargar er blanda saman av fleire fargar"],
@@ -249,7 +248,7 @@
                 },
                 "elektromagnet": {
                     tittel: "Lag en Elektromagnet",
-                    foto: "bilder/elektromagnet_utstyr.png", // NY: PLASSHALDARBILETE
+                    foto: "elektromagnet.png",
                     skildring: "Lær om samanhengen mellom elektrisitet og magnetisme ved å bygge ein enkel elektromagnet.",
                     utstyr: ["Batteri (f.eks. 9V)", "Ein stor jernspikar", "Isolert kopartråd", "Små binders"],
                     maal: ["Forstå prinsippet bak elektromagnetisme", "Bygge ein fungerande elektromagnet"],
@@ -276,7 +275,7 @@
                 },
                 "osmose": {
                     tittel: "Osmose med potet",
-                    foto: "bilder/rosinteater.jpg", // NY: PLASSHALDARBILETE
+                    foto: "osmose.png",
                     skildring: "Observer effekten av osmose (vanntransport) i planteceller.",
                     utstyr: ["Ein potet", "Kniv", "Tre skåler", "Vatn", "Salt", "Sukker"],
                     maal: ["Forstå kva osmose er", "Observere korleis celler reagerer på ulikt vasspotensial"],
@@ -303,7 +302,7 @@
                 },
                 "vulkan": {
                     tittel: "Kjemisk Vulkan",
-                    foto: "bilder/titrering.jpg", // NY: PLASSHALDARBILETE
+                    foto: "vulkan.png",
                     skildring: "Demonstrer ein syre-base-reaksjon som produserer gass (CO2).",
                     utstyr: ["Lita flaske eller glass", "Bakepulver", "Eddik", "Konditorfarge (valfritt)", "Zalo (valfritt)"],
                     maal: ["Lære om syre-base-reaksjonar", "Sjå korleis gass blir produsert i ein kjemisk reaksjon"],
@@ -328,7 +327,6 @@
                         }
                     ]
                 }
-                // === NYE FORSØK SLUTT ===
             };
         
 
@@ -557,7 +555,6 @@
                 const erSikker = confirm("Er du sikker? Dette vil slette alle lagra svar for alle forsøka.");
                 if (erSikker) {
                     localStorage.removeItem('labAssistentSvar');
-                    // NY: Nullstill alle svar i minnet
                     Object.keys(experiments).forEach(key => {
                         if (experiments[key] && experiments[key].steg) {
                             experiments[key].steg.forEach(step => step.answer = "");
@@ -572,7 +569,6 @@
                 /*const erSikker = confirm("Er du sikker på at du vil avbryte og gå tilbake til heimsida?");
                 
                 if (erSikker) {
-                    // NY: Lagre aktivt svar før ein går heim
                     aktueltEksperiment.steg[aktueltStegIndex].answer = stegSvarInput.value;
                     saveAnswersToLocalStorage();
                     showView(homeView);
@@ -636,3 +632,4 @@
     </script>
 </body>
 </html>
+
